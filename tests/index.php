@@ -16,4 +16,14 @@
         }
     }
 
-    echo (new Test)->nom();
+    $test = new Test;
+    $test->add([
+        'professession' => 'Medecin'
+    ]);
+
+    // echo $test->get('professession');
+    // print_r($test->keys());
+
+    // echo $test->get('professession');
+
+    echo $test->professession();

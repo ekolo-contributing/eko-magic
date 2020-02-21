@@ -12,13 +12,12 @@
      */
     class ParameterBag extends Magic  implements \Countable
     {
-        protected $parameters;
+        protected $parameters = [];
 
         public function __construct(array $parameters = [])
         {
-            $this->parameters = $parameters;
+            $this->add($parameters);
             parent::__construct($this->parameters);
-            $this->generateAttributes();
         }
 
         /**
@@ -54,6 +53,7 @@
         public function add(array $parameters = [])
         {
             $this->parameters = array_replace($this->parameters, $parameters);
+            $this->generateAttributes();
         }
 
         /**
@@ -108,7 +108,7 @@
         /**
          * Permet de générer des attributes magiques
          */
-        public function generateAttributes()
+        private function generateAttributes()
         {
             if ($this->count() > 0) {
                 foreach ($this->parameters as $key => $value) {
