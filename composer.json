@@ -1,0 +1,20 @@
+{
+    "name": "ekolo/eko-magic",
+    "description": "Module permet de g\u0000n\u0000rer des m\u0000thodes magiques",
+    "type": "lbrary",
+    "require": {
+        "php": ">=7.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Don de Dieu BOLENGE",
+            "email": "dondedieubolenge@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ekolo\\Component\\EkoMagic\\": "src/"
+        }
+    }
+}
