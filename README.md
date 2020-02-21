@@ -59,6 +59,17 @@ Permet de renvoyer la valeur d'une variable
 echo $parameters->get('prenom'); // Diani
 ```
 
+### ParameterBag::get($key, $default = null)
+
+Permet de renvoyer la valeur d'une variable
+
+`$key` : C'est le nom de la clé de la variable à récuperer
+`$default` : C'est la valeur par défaut au cas où cette variable n'existe pas
+
+```php
+echo $parameters->get('prenom'); // Diani
+```
+
 ### ParameterBag::set($key, $value)
 
 Permet de modifier ou de créer une nouvelle variable
@@ -154,3 +165,5 @@ $parameters->count(); // 3
 ### ParameterBag::generateAttributes()
 
 C'est une méthode `private` qui permet de générer des attributes magiques automatiquement.
+
+> Attention pour les clés qui ont de tiret `-`, là le génarateur des attributs et des méthodes ne les prend pas en charge, du cout ces valeurs ne peuvent être récuperées que par `get('User-agent')` ou `params('user-name')` ou `body('encore-ici')'` ainsi de suite
