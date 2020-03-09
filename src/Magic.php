@@ -34,6 +34,10 @@
 
         public function __call($method, $args)
         {
+            if (!isset($this->methods[$method])) {
+                $this->methods[$method] = null;
+            }
+            
             return $this->methods[$method];
         }
     }
